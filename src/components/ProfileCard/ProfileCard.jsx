@@ -30,9 +30,9 @@ export const Card = ({avatar, username, tag, location, stats}) => {
 }
 
 Card.ProtTypes = {
-    avatar: ProtTypes.string,
-    username: ProtTypes.string,
-    tag: ProtTypes.string,
-    location: ProtTypes.string,
-    stats: ProtTypes.oneOfType(ProtTypes.number)
+    avatar: ProtTypes.string.isRequired,
+    username: ProtTypes.string.isRequired,
+    tag: ProtTypes.string.isRequired,
+    location: ProtTypes.string.isRequired,
+    stats: ProtTypes.array,
 }
