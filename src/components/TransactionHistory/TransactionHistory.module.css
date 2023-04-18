@@ -1,0 +1,16 @@
+.transactionHistory {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin: 30px;
+    border-collapse: collapse;
+}
+ th {
+    padding: 20px;
+ }
+ td {
+    padding: 20px;
+    border: solid 1px black;
+  }
