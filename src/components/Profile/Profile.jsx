@@ -1,5 +1,5 @@
 import ProtTypes from 'prop-types';
-import css from "./ProfileCard.module.css"
+import css from "./Profile.module.css"
 
 
 export const Card = ({avatar, username, tag, location, stats}) => {
@@ -8,7 +8,7 @@ export const Card = ({avatar, username, tag, location, stats}) => {
         <div className={css.description}>
             <img className={css.avatar} src={avatar} alt={username}></img>
             <p className={css.name}>{username}</p>
-            <p className={css.tag}>{tag}</p>
+            <p className={css.tag}>@{tag}</p>
             <p className={css.location}>{location}</p>
         </div>
         <ul className={css.stats}>
