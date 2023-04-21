@@ -1,22 +1,29 @@
 import ProtTypes from 'prop-types';
-import css from "./FriendList.module.css"
+import css from "./FriendList.module.css";
+import { FriendListItem } from "../FriendListItem/FriendListItem";
 
-export const Friends = friends => {
+export const FriendList = friends => {
     return (
      <ul className={css.friendList}>
-        {friends.friends.map(({id, isOnline, avatar, name}) => (
-           <li className={css.item} key={id}>
-            {isOnline ? <span className={`${css.status} ${css.online}`}></span> : <span className={`${css.status} ${css.offline}`}></span>}
-           <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
-           <p className={css.name}>{name}</p>
-           </li>
+        {friends.friends.map((friend) => (
+           <FriendListItem
+           key={friend.id}
+           avatar={friend.avatar}
+           name={friend.name}
+           isOnline={friend.isOnline}
+         />
         ))}  
       </ul>
     )
 }
 
-Friends.ProtTypes = {
-    isOnline: ProtTypes.bool.isRequired,
-    avatar: ProtTypes.string.isRequired,
-    name: ProtTypes.number.isRequired,
-  }
+FriendList.propTypes = {
+  friends: ProtTypes.arrayOf(
+    ProtTypes.exact({
+      id: ProtTypes.number.isRequired,
+      avatar: ProtTypes.string.isRequired,
+      name: ProtTypes.string.isRequired,
+      isOnline: ProtTypes.bool.isRequired,
+    })
+  )
+};

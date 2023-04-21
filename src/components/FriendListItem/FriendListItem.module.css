@@ -1,0 +1,28 @@
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: solid 1px black;
+    box-shadow: 10px 5px 5px gray;
+}
+.status {
+    display: flex;
+    width: 10px;
+    height: 10px;
+}
+.avatar {
+    display: flex;
+}
+.name {
+    display: flex;
+}
+
+.online {
+    background-color: greenyellow;
+}
+
+.offline {
+    background-color: red;
+}
