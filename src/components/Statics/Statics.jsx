@@ -4,7 +4,7 @@ import css from "./Statics.module.css"
 export const Statics = ({stats, title}) => {
     return (
         <section className={css.statistics}>
-        {title.length > 0 && <h2 className={css.title}>{title}</h2>}
+        {title && <h2 className={css.title}>{title}</h2>}
         <ul className={css.statList}>
             {stats.map(({id, label, percentage}) => (
             <li key={id} className={css.item}>
@@ -16,8 +16,14 @@ export const Statics = ({stats, title}) => {
     )
 }
 
-Statics.ProtTypes = {
+
+Statics.propTypes = {
   title: ProtTypes.string,
-  label: ProtTypes.string.isRequired,
-  percentage: ProtTypes.number.isRequired,
-}
+  stats: ProtTypes.arrayOf(
+    ProtTypes.shape({
+      id: ProtTypes.string.isRequired,
+      label: ProtTypes.string.isRequired,
+      percentage: ProtTypes.number.isRequired,
+    })
+  ),
+};

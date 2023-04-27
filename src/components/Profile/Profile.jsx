@@ -34,5 +34,9 @@ Card.ProtTypes = {
     username: ProtTypes.string.isRequired,
     tag: ProtTypes.string.isRequired,
     location: ProtTypes.string.isRequired,
-    stats: ProtTypes.array,
+    stats: ProtTypes.shape({
+        followers: ProtTypes.number.isRequired,
+        views: ProtTypes.number.isRequired,
+        likes: ProtTypes.number.isRequired,
+    })
 }

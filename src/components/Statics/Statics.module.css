@@ -1,12 +1,17 @@
 .statistics {
+    width: 300px;
     display: flex;
+    flex-direction: column;
 }
 .title {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .statList {
     display: flex;
+    padding-left: 0;
     gap: 8px;
     list-style: none;
     justify-content: center;
